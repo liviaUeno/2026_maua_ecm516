@@ -98,4 +98,42 @@
 // console.log(v1.length)
 // console.log(v1)
 
+// ---------
 
+// funções:
+// function e arrow function:
+// não existe overload
+// function hello (){
+//     console.log(`Oi`)
+// }
+// hello() // vc chamous hello(undefined)
+// function hello(nome){ // considerou só essa
+//     console.log(`Oi, ${nome}`)
+// }
+// hello(`João`)
+
+// function soma(a, b){
+//     return a + b
+// }
+// const resultado = soma(2, 3)
+// console.log(resultado)  
+
+// // função anonima
+// const dobro = function(n){
+//     return 2*n
+// }
+// console.log(dobro(6))
+
+// caso n passe um valor: n = 5
+// const triplo = function(n = 5){
+//     return 3*n
+// }
+// console.log(triplo(2))
+// console.log(triplo())
+
+// arrow function (melhor):
+// const falarOi = () => {console.log('oi')} 
+// falarOi()
+// const falarOi = nome => console.log(`oi, ${nome}`) // se tiver só 1 arg ou 1 comando, vc pode omitir () e {}
+// const somar = (a, b) => a + b // sem return, é implícito. se colocar {} dai precisa de return
+// falarOi()
