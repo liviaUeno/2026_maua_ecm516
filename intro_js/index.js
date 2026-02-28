@@ -85,3 +85,17 @@
 // console.log(null === undefined) // null é definido e não aponta pra nada, undefined não é definido
 // console.log([] == false) // ???
 // console.log ([] == []) // ????
+
+// ----------
+
+// coleções: 
+// 1. vetores: aumenta dinamicamente
+// v1 = [0, 1] 
+// console.log(v1.length)
+// v1[2] = 2
+// console.log(v1.length)
+// v1[10] = "joao"
+// console.log(v1.length)
+// console.log(v1)
+
+
