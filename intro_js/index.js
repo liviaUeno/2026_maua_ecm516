@@ -239,3 +239,25 @@
 // const res = eAgora()
 // res.f1() // roda com o cont final 
 // res.f2()
+
+// ----------
+
+// JSON: JavaScript Object Notation
+// let pessoa = {
+//     nome: "joao",
+//     idade: 17
+// }
+// console.log(pessoa.nome)
+// console.log(pessoa["idade"])
+
+const pessoa = {
+    nome: 'Maria',
+    idade: 21,
+    endereco: {
+        logradouro: "Rua B",
+        numero: 50
+    }
+}
+
+console.log(pessoa.endereco.logradouro)
+console.log(pessoa['endereco']['numero'])
