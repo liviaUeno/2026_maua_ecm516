@@ -190,15 +190,3 @@
 // }
 // const res = f(17)
 // res()
-
-// const eAgora = () => {
-//     let cont = 1
-//     const f1 = () => console.log(cont)
-//     cont++
-//     const f2 = () => console.log(cont)
-//     cont++
-//     return {f1, f2}
-// }
-// const res = eAgora()
-// res.f1() // roda com o cont final 
-// res.f2()
