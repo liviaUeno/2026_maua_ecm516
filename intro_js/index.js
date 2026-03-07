@@ -118,7 +118,7 @@
 // const resultado = soma(2, 3)
 // console.log(resultado)  
 
-// // função anonima
+// // função anonima:
 // const dobro = function(n){
 //     return 2*n
 // }
@@ -137,3 +137,20 @@
 // const falarOi = nome => console.log(`oi, ${nome}`) // se tiver só 1 arg ou 1 comando, vc pode omitir () e {}
 // const somar = (a, b) => a + b // sem return, é implícito. se colocar {} dai precisa de return
 // falarOi()
+
+// // funções sobre vetores:
+// const nomes = ["Ana", "Antonio", "Maria", "Joao"]
+// const apenasComA = nomes.filter((nome) => {return nome.startsWith("A")}) // filter recebe 1 parâmetro que é uma função. filter cria um novo array que passa pela função
+// console.log(apenascomA)
+// const iniciais = nomes.map(function(nome){return nome.charAt(0)})
+// console.log(iniciais)
+// const res = nomes.every(n => n.startsWith("A"))
+// console.log(res)
+// const res = nomes.some(n => n.startsWith("A"))
+// console.log(res)
+// const numeros = [1, 2, 3, 4]
+// const res = numeros.reduce((ac, v) => ac + v) // ac = acumulador --- reduz a 1 valor só
+// ac = 1 -> 3 -> 6 
+// v = 2 -> 3 -> 4
+// console.log(res)
+
