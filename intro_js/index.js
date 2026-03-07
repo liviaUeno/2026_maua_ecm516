@@ -191,6 +191,43 @@
 // const res = f(17)
 // res()
 
+// ----------
+
+// brincando de lógica de funções:
+// let umaFuncao = function(){
+//     console.log("Fui armazenada em uma variavel")
+//     return () => "oi"
+// }
+// umaFuncao()
+// function f(funcao){
+//     console.log(funcao())
+// }
+// f(umaFuncao())
+
+// function f(funcao){
+//     funcao()
+// }
+// function g(){
+//     function outraFuncao(){
+//         console.log("criada por g")
+//         return () => "A"
+    
+//     }
+//     return outraFuncao ()
+// }
+// console.log(g()())
+
+// closure: funçao interna usar variável morta
+// function f(idade){ // funciona tipo class em java
+//     let nome = "joao" // membro de f
+//     function g(){ // membro de f, logo n precisa passar nome no parâmetro
+//         console.log(`meu nome é ${nome} e tenho ${idade} anos`)
+//     }
+//     return g
+// }
+// const res = f(17)
+// res()
+
 // const eAgora = () => {
 //     let cont = 1
 //     const f1 = () => console.log(cont)
