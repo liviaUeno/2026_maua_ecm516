@@ -19,6 +19,11 @@ axios.get(url) //assíncrona -- promise
     .then(res => {
         // mostrar temperatura máxima da primeira previsão do tempo
         console.log(res[0].main.temp_max)
-        return res[0].main.temp_max
+        return res
+    })
+    .then(previsoes => {
+        for(let previsao of previsoes){
+            console.log(previsao.weather[0].description)
+        }
     })
 console.log("A")
