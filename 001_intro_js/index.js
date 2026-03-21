@@ -1,3 +1,5 @@
+//PARA RODAR: node --watch index.js
+
 // console.log("Hello World")
 
 // declarando constantes
@@ -243,6 +245,7 @@
 // ----------
 
 // JSON: JavaScript Object Notation
+// exemplos:
 // let pessoa = {
 //     nome: "joao",
 //     idade: 17
@@ -250,14 +253,218 @@
 // console.log(pessoa.nome)
 // console.log(pessoa["idade"])
 
-const pessoa = {
-    nome: 'Maria',
-    idade: 21,
-    endereco: {
-        logradouro: "Rua B",
-        numero: 50
-    }
-}
+// const pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     endereco: {
+//         logradouro: "Rua B",
+//         numero: 50
+//     }
+// }
 
-console.log(pessoa.endereco.logradouro)
-console.log(pessoa['endereco']['numero'])
+// console.log(pessoa.endereco.logradouro)
+// console.log(pessoa['endereco']['numero'])
+
+// let concessionaria = {
+//     nome: "nome",
+//     cnpj: "cnpj",
+//     endereco: {
+//         logradouro: "logradouro",
+//         numero: "numero",
+//         bairro: {
+//             nome: "bairro"
+//         }
+//     },
+//     veiculos: [
+//         {
+//             modelo: "modelo",
+//             marca: "marca",
+//             placa: "placa"
+//         },
+//         {
+//             modelo: "outro modelo",
+//             marca: "outra marca",
+//             placa: "outra placa"
+//         },
+        
+//     ]
+// }
+
+
+// console.log(concessionaria)
+// console.log(concessionaria.veiculos[0]["modelo"])
+
+// ----------
+
+// calculadora:
+// o que eu fiz:
+// function calculadora_da_livia(){
+//    let soma = (a, b) => {return a+b} 
+//    let subtracao = (a,b) => a-b
+//    function multiplicacao(a, b){
+//         return a*b
+//    }
+//    const divisao = (a, b) => {return a/b}
+//    return {soma, subtracao, multiplicacao, divisao}
+// } 
+
+// console.log(calculadora_da_livia().soma(2, 3))
+// console.log(calculadora_da_livia().subtracao(2, 3))
+// console.log(calculadora_da_livia().multiplicacao(2, 3))
+// console.log(calculadora_da_livia().divisao(2, 3))
+
+// // prof fez:
+// const calculadora_do_prof = {
+//     operacoes: {
+//         soma: (a, b) => {return a + b},
+//         subtracao: (a, b) => a - b,
+//         multiplicacao: function (a, b){
+//             return a * b
+//         },
+//         divisao: (a, b) => a / b
+//     }
+// }
+
+// console.log(calculadora_do_prof.operacoes.soma(2, 3))
+// console.log(calculadora_do_prof.operacoes.subtracao(2, 3))
+// console.log(calculadora_do_prof.operacoes.multiplicacao(2, 3))
+// console.log(calculadora_do_prof.operacoes.divisao(2, 3))
+
+// ----------
+
+// síncrono = bloqueante:
+// console.log("Eu primeiro...")
+// console.log("Agora eu...")
+// console.log("Sempre serei a última...")
+
+// const a = 5 + 6
+// const b = 9 * 4
+// console.log(a + b)
+
+// assíncrono: 
+// function demorada(tempo){
+//     const dataAtualMaisTempo = new Date().getTime() + tempo 
+//     while (new Date().getTime() <= dataAtualMaisTempo); // simula demora 
+//     const d = 8 + 2 * 6
+//     console.log(`demora com o tempo ${tempo}`)
+//     return d
+// }
+
+// setTimeout(() => {
+//     demorada(5000)
+// }, 2000) // demora 2s para entrar na fila, ent a de baixo executa antes
+
+// setTimeout(() => {
+//     demorada(2000)
+// }, 0)
+
+// console.log("Fim do script")
+
+// const a = 2 + 3
+// const b = 6 * 1
+// setTimeout(() => {
+//     const d = demorada()
+//     console.log(`d: ${d}`)
+// }, 500) 
+// const e = a + b * 2
+// console.log(`e: ${e}`)
+
+// setTimeout(() => { // pulou essa 
+//     console.log("Agendada pela setTimeout") // voltou e exec
+// }, 0)
+// const dataAtualMais5Segundos = new Date().getTime() + 5000
+
+// while(new Date().getTime() <= dataAtualMais5Segundos); // pulou essa dps
+// console.log("Terminando o script principal...") // exec
+
+// ----------
+
+// CPU Bound: predominantemente caracterizadaa por ciclos de cpu
+// IO Bound: predominantemente caracterizaada por operações de entrada e saída 
+
+// const fs = require('fs')
+// const nomeArquivo = "arquivo.txt"
+
+// função callback: define mas nunca chama, ela é chamada pra você
+// const exibirConteudo = function (erro, conteudo) {
+//   if (erro) {
+//     console.log(`Deu erro: ${erro}`);
+//   } else {
+//     console.log(conteudo.toString());
+//     const dobro = +conteudo.toString() * 2;
+
+//     const finalizar = function (erro) {
+//       if (erro) {
+//         console.log('Deu erro tentando salvar o dobro');
+//       } else {
+//         console.log("Salvou o dobro com sucesso");
+//       }
+//     };
+
+//     fs.writeFile('dobro.txt', dobro.toString(), finalizar);
+//   }
+// };
+
+// fs.readFile(nomeArquivo, exibirConteudo);
+
+// PARA RODAR:  node --watch-path="./arquivo.txt" index.js
+
+// ----------
+
+// promise: objeto por meio do qual uma função pode propagar um resultado ou um erro em algum momento no futuro
+// - pending: computação demorada não finalizou
+// - fulfilled: computação demorada finalizou com sucesso
+// - rejected: computação demorada finalizou com fracasso
+
+// 1 + 2 + 3 + ... n
+// const calculoDemorado = (n) => {
+//     let cont = 0
+//     for(let i = 1; i<= n; i++)
+//         cont += i
+//         return cont
+// }
+
+// const calculoDemorado = (n) => {
+//     return new Promise((resolve, reject) => {
+//         // se n for negativo, propagar um erro
+//         // caso contrário, continua como era
+
+//         if (n >= 0){
+//             let ac = 0
+//             for(let i = 1; i <= n; i++)
+//                 ac += i
+//             resolve(ac)
+//             }
+//         else{
+//             reject("n não pode ser negativo")
+//         }
+//     })
+// }
+// const minhaPromise = calculoDemorado(10)
+
+// // then-catch:
+// minhaPromise
+// .then((resultado) => {console.log(`Resultado ${resultado}`)})
+// .catch((erro) => {console.log(`Deu erro: ${erro}`)})
+
+// const calculoRapidinho = (n) =>{
+//     return n >= 0? Promise.resolve((n/2)*(n+1)) : Promise.reject("n maior igual a 0")
+// }
+// calculoRapidinho(10)
+// .then(function(resultado){console.log("Resultado: " + resultado)})
+// .catch(function(erro){console.log("Deu erro: " + erro)})
+
+// calculoRapidinho(10)
+// .then((res) => {
+//     calculoRapidinho(res)
+//     .then((res2) => {
+//         calculoRapidinho(res2)
+//         .then((res3) => {
+//             calculoRapidinho(res3)
+//             .then((res4) => {
+//             console.log(res4)
+//             })
+//         })
+//     })
+// })
+// .catch((erro) => {console.log(erro)})
