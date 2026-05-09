@@ -141,15 +141,15 @@
 // falarOi()
 
 // // funções sobre vetores:
-// const nomes = ["Ana", "Antonio", "Maria", "Joao"]
+const nomes = ["Ana", "Antonio", "Maria", "Joao"]
 // const apenasComA = nomes.filter((nome) => {return nome.startsWith("A")}) // filter recebe 1 parâmetro que é uma função. filter cria um novo array que passa pela função
-// console.log(apenascomA)
+// console.log(apenasComA)
 // const iniciais = nomes.map(function(nome){return nome.charAt(0)})
 // console.log(iniciais)
 // const res = nomes.every(n => n.startsWith("A"))
 // console.log(res)
-// const res = nomes.some(n => n.startsWith("A"))
-// console.log(res)
+const res = nomes.some(n => n.startsWith("A"))
+console.log(res)
 // const numeros = [1, 2, 3, 4]
 // const res = numeros.reduce((ac, v) => ac + v) // ac = acumulador --- reduz a 1 valor só
 // ac = 1 -> 3 -> 6 
@@ -192,6 +192,14 @@
 // }
 // const res = f(17)
 // res()
+
+// o escopo de dentro tem acesso ao de fora, mas o de fora não tem acesso ao de dentro -- regra do js
+// if(true){
+//     const a = 0;
+//     if(1>0){
+//         console.log(`o numero é ${a}`)
+//     }
+// }
 
 // ----------
 
@@ -447,9 +455,6 @@
 // .then((resultado) => {console.log(`Resultado ${resultado}`)})
 // .catch((erro) => {console.log(`Deu erro: ${erro}`)})
 
-// const calculoRapidinho = (n) =>{
-//     return n >= 0? Promise.resolve((n/2)*(n+1)) : Promise.reject("n maior igual a 0")
-// }
 // calculoRapidinho(10)
 // .then(function(resultado){console.log("Resultado: " + resultado)})
 // .catch(function(erro){console.log("Deu erro: " + erro)})
