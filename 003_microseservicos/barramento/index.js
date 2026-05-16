@@ -1,21 +1,23 @@
 const axios = require ("axios")
-const express = require('expresss')
+const express = require('express')
 const app = express()
 app.use(express.json())
 
+// simplificando pro barramento ser broadcast, mas poderia fazer tipo MQTT com pub/sub
+
 app.post('/eventos', async (req, res) => {
     const evento = req.body
+    console.log(evento)
     try{
-        await axios.post('http://localhost:4000/eventos')
-    } catch(e){
-        try{
-            await axios.post('http://localhost:5000/eventos')
-        } catch(e){
-            res.end()
-        }
-    }
-    
-    res.end()
+        await axios.post('http://localhost:4000/eventos', evento)
+    } catch (e) {}
+    try{
+        await axios.post('http://localhost:5000/eventos', evento)
+    } catch (e) {}
+    try{
+        await axios.post('http://localhost:6000/eventos', evento)
+    } catch (e) {}
+    res.status(200).send({ msg: "ok" });    
 })
 
 const port = 10000
